@@ -1,0 +1,36 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    .navbar-coupon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 40px;
+        color: #ffffff;
+        font-size: 20px;
+        background: linear-gradient(to right, #3920ab, #d80780);
+    }
+    .navbar-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        background-color: #f6efff;
+        .left {
+            img {
+                width: 50px;
+                height: 50px;
+                margin-top: 10px;
+                cursor: pointer;
+            }
+        }
+        .right {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+            font-size: 14px;
+        }
+    }
+}

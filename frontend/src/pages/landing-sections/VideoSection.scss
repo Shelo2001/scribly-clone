@@ -1,0 +1,43 @@
+.video-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 100px;
+    h1 {
+        color: #1d2b4c;
+        font-size: 40px;
+    }
+    iframe {
+        width: 56%;
+        height: 600px;
+    }
+    .features-row {
+        display: flex;
+        margin-top: 50px;
+        flex-direction: column;
+        gap: 50px;
+        .features {
+            display: flex;
+            margin: 0 auto;
+            width: 50%;
+            .features-header {
+                color: #482b4c;
+                font-size: 28px;
+            }
+            .features-description {
+                font-size: 18px;
+                font-weight: 400;
+                color: #535f75;
+                span {
+                    color: #535f75;
+                    font-weight: 700;
+                }
+            }
+            img {
+                margin: 0px 50px;
+                width: 40%;
+            }
+        }
+    }
+}

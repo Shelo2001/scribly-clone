@@ -1,0 +1,27 @@
+.pickaplan-container {
+    margin-top: 150px;
+    background-image: url("../../assets/databackground.svg");
+    background-size: 60%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-position-y: center;
+    margin-bottom: 40px;
+    .pickaplan-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        margin: auto;
+        text-align: center;
+        width: 80%;
+        h1 {
+            width: 40%;
+            margin: 0 auto;
+            font-weight: 400;
+        }
+        button {
+            padding: 15px 22px 13px;
+            font-size: 18px;
+        }
+    }
+}
