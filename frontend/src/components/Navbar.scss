@@ -31,6 +31,13 @@
             justify-content: space-between;
             gap: 30px;
             font-size: 14px;
+            p {
+                border-bottom: 2px solid transparent;
+                transition: 0.5s;
+            }
+            p:hover {
+                border-bottom: 2px solid #d80780;
+            }
         }
     }
 }

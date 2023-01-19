@@ -7,7 +7,7 @@ const PickaplanSection = () => {
     return (
         <div
             data-aos="fade-up"
-            data-aos-delay="1000"
+            data-aos-delay="500"
             data-aos-duration="1200"
             className="pickaplan-container"
         >

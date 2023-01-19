@@ -1,0 +1,25 @@
+.pricing-container {
+    margin-top: 150px;
+    text-align: center;
+    background: url("../assets/pricingbackground.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 80vh;
+    h1 {
+        font-size: 50px;
+    }
+    p {
+        font-size: 20px;
+        color: #949ca9;
+    }
+    .pricing-card-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        .card {
+            width: 24%;
+            border: 1px solid #949ca9;
+            min-height: 300px;
+        }
+    }
+}

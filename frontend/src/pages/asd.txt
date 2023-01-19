@@ -1,0 +1,160 @@
+<input type="radio" name="card" id="card_one" />
+                <input type="radio" name="card" id="card_two" />
+                <input type="radio" name="card" id="card_three" />
+                <label for="card_one">
+                    <div class="card">
+                        <span class="check_btn">
+                            <i class="fas fa-check"></i>
+                        </span>
+
+                        <h2 class="title">Lenovo Legion 7</h2>
+                        <ul>
+                            <li>
+                                Ports: <span>3</span>
+                            </li>
+                            <li>
+                                CPU: <span>Intel Core i7</span>
+                            </li>
+                            <li>
+                                Ram: <span>16GB Ram DDR4</span>
+                            </li>
+                            <li>
+                                SSD: <span>1TR</span>
+                            </li>
+                            <li>
+                                Graphic Card:{" "}
+                                <span>NVIDIA GeForce RTX 3070</span>
+                            </li>
+                            <li>
+                                Color: <span>Grey</span>
+                            </li>
+                        </ul>
+                    </div>
+                </label>
+                <label for="card_two">
+                    <div class="card">
+                        <span class="check_btn">
+                            <i class="fas fa-check"></i>
+                        </span>
+
+                        <h2 class="title">Lenovo Legion 7</h2>
+                        <ul>
+                            <li>
+                                Ports: <span>3</span>
+                            </li>
+                            <li>
+                                CPU: <span>Intel Core i7</span>
+                            </li>
+                            <li>
+                                Ram: <span>16GB Ram DDR4</span>
+                            </li>
+                            <li>
+                                SSD: <span>1TR</span>
+                            </li>
+                            <li>
+                                Graphic Card:{" "}
+                                <span>NVIDIA GeForce RTX 3070</span>
+                            </li>
+                            <li>
+                                Color: <span>Grey</span>
+                            </li>
+                        </ul>
+                    </div>
+                </label>
+                <label for="card_three">
+                    <div class="card">
+                        <span class="check_btn">
+                            <i class="fas fa-check"></i>
+                        </span>
+                        <h2 class="title">Lenovo Legion 7</h2>
+                        <ul>
+                            <li>
+                                Ports: <span>3</span>
+                            </li>
+                            <li>
+                                CPU: <span>Intel Core i7</span>
+                            </li>
+                            <li>
+                                Ram: <span>16GB Ram DDR4</span>
+                            </li>
+                            <li>
+                                SSD: <span>1TR</span>
+                            </li>
+                            <li>
+                                Graphic Card:{" "}
+                                <span>NVIDIA GeForce RTX 3070</span>
+                            </li>
+                            <li>
+                                Color: <span>Grey</span>
+                            </li>
+                        </ul>
+                    </div>
+                </label>
+
+=========================================================
+
+.card {
+    margin: 0 1rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 0.5rem;
+    position: relative;
+    cursor: pointer;
+    border: 0.5rem solid transparent;
+    transition: 200ms ease-in-out transform;
+}
+.check_btn {
+    position: absolute;
+    top: 8%;
+    right: 8%;
+    background-color: rgba(92, 92, 92, 0.4);
+    width: 2rem;
+    height: 2rem;
+    display: grid;
+    place-items: center;
+    border-radius: 0.5rem;
+}
+.fa-check {
+    color: #fff;
+}
+.title {
+    margin: 1.5rem 0;
+}
+.title,
+ul li {
+    color: #1f1208;
+    text-shadow: 0 0 0.1rem rgba(0, 0, 0, 0.4);
+}
+
+.card:hover {
+    transform: scale(1.02);
+}
+.card:active {
+    transform: scale(0.97);
+}
+
+input[id="card_one"]:checked ~ label[for="card_one"] .card,
+input[id="card_two"]:checked ~ label[for="card_two"] .card,
+input[id="card_three"]:checked ~ label[for="card_three"] .card {
+    border-color: rgb(21, 238, 21);
+}
+
+input[id="card_one"]:checked ~ label[for="card_one"] .card .check_btn,
+input[id="card_two"]:checked ~ label[for="card_two"] .card .check_btn,
+input[id="card_three"]:checked ~ label[for="card_three"] .card .check_btn {
+    background-color: rgb(21, 238, 21);
+}
+
+input[id="card_one"]:checked ~ label[for="card_one"] .card .img,
+input[id="card_two"]:checked ~ label[for="card_two"] .card .img,
+input[id="card_three"]:checked ~ label[for="card_three"] .card .img {
+    border-color: rgb(21, 238, 21);
+    box-shadow: 0 0 0.5rem rgba(21, 238, 21, 0.6);
+}
+
+input {
+    display: none;
+}
+
