@@ -5,6 +5,8 @@ import Landing from "./pages/Landing";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Pricing from "./pages/Pricing";
+import Services from "./pages/Services";
+import Cart from "./pages/Cart";
 function App() {
     AOS.init();
 
@@ -14,6 +16,8 @@ function App() {
             <Routes>
                 <Route path="/" element={<Landing />} />
                 <Route path="/pricing" element={<Pricing />} />
+                <Route path="/services" element={<Services />} />
+                <Route path="/pricing/:id" element={<Cart />} />
             </Routes>
         </Router>
     );

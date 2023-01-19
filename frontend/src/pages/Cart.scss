@@ -1,0 +1,16 @@
+.cart {
+    display: flex;
+    .left {
+        width: 60%;
+        min-height: 500px;
+        margin-top: 106px;
+    }
+    .right {
+        width: 40%;
+        min-height: 100vh;
+        position: fixed;
+        margin-top: 106px;
+        right: 0;
+        background-color: #520d77;
+    }
+}
