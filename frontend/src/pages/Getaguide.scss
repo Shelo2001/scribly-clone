@@ -1,0 +1,72 @@
+.getaguide-container {
+    display: flex;
+    margin-top: 106px;
+    justify-content: center;
+    .left {
+        img {
+            width: 800px;
+            height: 800px;
+        }
+    }
+    .right {
+        display: flex;
+        justify-content: center;
+        .formcontainer {
+            margin-top: 30px;
+            box-shadow: 1px 1px 25px 0px rgba(0, 0, 0, 0.25);
+            -webkit-box-shadow: 1px 1px 25px 0px rgba(0, 0, 0, 0.25);
+            -moz-box-shadow: 1px 1px 25px 0px rgba(0, 0, 0, 0.25);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            width: 50%;
+            align-items: center;
+            .formcontainer-header {
+                font-weight: 600;
+                font-size: 40px;
+                color: #1d3c5d;
+            }
+            .formcontainer-desc {
+                width: 80%;
+                color: #535f8b;
+            }
+            .form {
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+                width: 100%;
+                div {
+                    display: flex;
+                    width: 80%;
+                    margin: auto;
+                    flex-direction: column;
+                    input {
+                        border: none;
+                        height: 40px;
+                        border: 1px solid rgb(222, 219, 219);
+                    }
+                    input:focus {
+                        box-shadow: 0px 0px 4px #751aa6;
+                        -webkit-box-shadow: 0px 0px 4px #751aa6;
+                        -moz-box-shadow: 0px 0px 4px #751aa6;
+                        outline: none !important;
+                        border: 1px solid #751aa6;
+                    }
+                    input::placeholder {
+                        font-family: "Comfortaa", cursive;
+                        font-family: "Open Sans", sans-serif;
+                        font-family: "Overpass", sans-serif;
+                    }
+                }
+                .btn-primary {
+                    width: 40%;
+                    font-size: 24px;
+                    position: absolute;
+                    bottom: 0;
+                    right: 140px;
+                    bottom: 20px;
+                }
+            }
+        }
+    }
+}
