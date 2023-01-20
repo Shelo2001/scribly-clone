@@ -19,6 +19,7 @@
     }
     .services-card-container {
         width: 40%;
+        border-radius: 10px;
         margin: auto;
         background-color: #6c129d;
         margin-bottom: 30px;
@@ -28,6 +29,7 @@
             min-height: 300px;
             display: flex;
             flex-direction: column;
+            border-radius: 10px;
             justify-content: center;
             align-items: center;
             .services-card-header {

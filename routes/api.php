@@ -1,6 +1,8 @@
 <?php
 
+use App\Mail\HelloMail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,4 +18,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
+});
+Route::get('/email', function () {
+    Mail::to('sheliaakaki47@gmail.com')->send(new HelloMail());
 });
