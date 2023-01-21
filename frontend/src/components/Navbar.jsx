@@ -1,13 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/logo.png";
 import "./Navbar.scss";
+import axios from "axios";
 
 const Navbar = () => {
+    const [code, setCode] = useState("");
+
+    useEffect(() => {
+        const getCouponCode = async () => {
+            const { data } = await axios.get(
+                `${import.meta.env.VITE_BASE_API_URL}/couponcode`
+            );
+            setCode(data?.coupon_code_name);
+        };
+
+        getCouponCode();
+    }, []);
+
     return (
         <div className="navbar">
             <div className="navbar-coupon">
-                Discount 20% Coupon Code:&nbsp;&nbsp;&nbsp;Shelo2001
+                Discount 20% Coupon Code:&nbsp;&nbsp;&nbsp;{code}
             </div>
             <div className="navbar-container">
                 <div className="left">
@@ -21,9 +35,6 @@ const Navbar = () => {
                     </Link>
                     <Link to="/pricing">
                         <p>Pricing</p>
-                    </Link>
-                    <Link to="/casestudies">
-                        <p>Case Studies</p>
                     </Link>
                     <Link to="/getaguide">
                         <button className="btn-primary">Get a Guide</button>

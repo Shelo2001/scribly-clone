@@ -4,6 +4,101 @@
         width: 60%;
         min-height: 500px;
         margin-top: 106px;
+        .header {
+            width: 80%;
+            margin: auto;
+            font-size: 20px;
+            margin-top: 30px;
+            color: #00254d;
+        }
+        .header-description {
+            width: 80%;
+            color: #00254d;
+            margin: auto;
+            font-weight: 600;
+            margin-top: 30px;
+        }
+        .cart-form-container {
+            width: 80%;
+            margin: auto;
+            input:focus {
+                box-shadow: 0px 0px 4px #00254d;
+                -webkit-box-shadow: 0px 0px 4px #00254d;
+                -moz-box-shadow: 0px 0px 4px #00254d;
+                outline: none !important;
+                border: 1px solid #00254d;
+            }
+            input::placeholder {
+                font-family: "Comfortaa", cursive;
+                font-family: "Open Sans", sans-serif;
+                font-family: "Overpass", sans-serif;
+            }
+            .person-container {
+                display: flex;
+                gap: 30px;
+                input {
+                    border: none;
+                    height: 50px;
+                    border: 1px solid rgb(222, 219, 219);
+                    width: 100%;
+                }
+            }
+            .email-container {
+                display: flex;
+                input {
+                    border: none;
+                    height: 50px;
+                    border: 1px solid rgb(222, 219, 219);
+                    width: 100%;
+                }
+            }
+            .card-items {
+                display: flex;
+                input[type="radio"] {
+                    display: none;
+                }
+            }
+            .address-container {
+                display: flex;
+                gap: 30px;
+                input {
+                    border: none;
+                    height: 50px;
+                    border: 1px solid rgb(222, 219, 219);
+                    width: 50%;
+                }
+            }
+            .additional-address-container {
+                display: flex;
+                gap: 30px;
+                margin-top: 30px;
+                input {
+                    border: none;
+                    height: 50px;
+                    border: 1px solid rgb(222, 219, 219);
+                    width: 50%;
+                }
+                select {
+                    width: 50%;
+                    border: 1px solid rgb(222, 219, 219);
+                }
+            }
+            .terms-container {
+                margin-top: 30px;
+            }
+            .btn-secondary {
+                width: 100%;
+                margin-top: 30px;
+                font-size: 24px;
+                margin-bottom: 30px;
+            }
+            .btn-disabled {
+                width: 100%;
+                margin-top: 30px;
+                margin-bottom: 30px;
+                font-size: 24px;
+            }
+        }
     }
     .right {
         width: 40%;
@@ -12,5 +107,56 @@
         margin-top: 106px;
         right: 0;
         background-color: #520d77;
+        .header {
+            margin: 30px;
+            color: white;
+            font-size: 24px;
+        }
+        .price-container {
+            display: flex;
+            justify-content: space-between;
+            margin: 50px;
+            color: white;
+        }
     }
+}
+.card {
+    margin: 10px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+    border: 2px solid rgb(242, 238, 238);
+    transition: 0.3s;
+    .desc {
+        font-size: 14px;
+    }
+    .title,
+    .card:hover {
+        transform: scale(1.02);
+    }
+    span {
+        position: absolute;
+        right: 10px;
+        margin-right: 10px;
+    }
+    .card:active {
+        transform: scale(0.97);
+    }
+    span {
+        color: rgb(242, 238, 238);
+    }
+}
+input[id="card_one"]:checked ~ label[for="card_one"] .card,
+input[id="card_two"]:checked ~ label[for="card_two"] .card,
+input[id="card_three"]:checked ~ label[for="card_three"] .card {
+    border-color: #17385b;
+    border-color: #17385b;
+}
+input[id="card_one"]:checked ~ label[for="card_one"] .card span,
+input[id="card_two"]:checked ~ label[for="card_two"] .card span,
+input[id="card_three"]:checked ~ label[for="card_three"] .card span {
+    color: #17385b;
 }
