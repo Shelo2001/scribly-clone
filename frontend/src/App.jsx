@@ -8,6 +8,7 @@ import Pricing from "./pages/Pricing";
 import Services from "./pages/Services";
 import Cart from "./pages/Cart";
 import Getaguide from "./pages/Getaguide";
+import Payment from "./pages/Payment";
 function App() {
     AOS.init();
 
@@ -20,6 +21,7 @@ function App() {
                 <Route path="/services" element={<Services />} />
                 <Route path="/getaguide" element={<Getaguide />} />
                 <Route path="/pricing/:id" element={<Cart />} />
+                <Route path="/payment" element={<Payment />} />
             </Routes>
         </Router>
     );

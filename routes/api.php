@@ -5,7 +5,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SendMailController;
+use App\Http\Controllers\BuyerInfoController;
 use App\Http\Controllers\CouponCodeController;
+use App\Http\Controllers\StripePaymentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,3 +26,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::post('/email',[SendMailController::class,'sendAndSaveEmail']);
 Route::post('/couponcode/create',[CouponCodeController::class,'enterCouponCodeName']);
 Route::get('/couponcode',[CouponCodeController::class,'getCouponCode']);
+Route::post('/savebuyerinfo',[BuyerInfoController::class,'saveBuyerInfo']);
+Route::post('/payment',[StripePaymentController::class,'stripePost']);

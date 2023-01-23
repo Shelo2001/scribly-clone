@@ -1,14 +1,24 @@
 import React, { useEffect, useState } from "react";
 import "./Cart.scss";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const Cart = () => {
+    const navigate = useNavigate();
     const [countries, setCountries] = useState([]);
+    const [country, setCountry] = useState("");
     const [price, setPrice] = useState("");
     const [disabled, setDisabled] = useState(true);
     const { id } = useParams();
-
+    const [allValues, setAllValues] = useState({
+        name: "",
+        surname: "",
+        email: "",
+        address: "",
+        city: "",
+        state: "",
+        postal_code: "",
+    });
     const [selectedId, setSelectedId] = useState(id);
 
     useEffect(() => {
@@ -43,6 +53,19 @@ const Cart = () => {
         }
     };
 
+    const changeHandler = (e) => {
+        setAllValues({ ...allValues, [e.target.name]: e.target.value });
+    };
+
+    const submitHandler = async () => {
+        let values = { ...allValues, price, country };
+        await axios.post(
+            `${import.meta.env.VITE_BASE_API_URL}/savebuyerinfo`,
+            values
+        );
+        navigate("/payment");
+    };
+
     return (
         <div className="cart-container">
             <div className="cart">
@@ -58,13 +81,25 @@ const Cart = () => {
                     <div className="cart-form-container">
                         <p>Full Name</p>
                         <div className="person-container">
-                            <input type="text" placeholder="John" />
-                            <input type="text" placeholder="Smith" />
+                            <input
+                                name="name"
+                                onChange={changeHandler}
+                                type="text"
+                                placeholder="John"
+                            />
+                            <input
+                                name="surname"
+                                onChange={changeHandler}
+                                type="text"
+                                placeholder="Smith"
+                            />
                         </div>
 
                         <p>Email</p>
                         <div className="email-container">
                             <input
+                                onChange={changeHandler}
+                                name="email"
                                 type="email"
                                 placeholder="johnsmith@example.com"
                             />
@@ -149,11 +184,23 @@ const Cart = () => {
                             added tax)
                         </p>
                         <div className="address-container">
-                            <input type="text" placeholder="address" />
-                            <input type="text" placeholder="city" />
+                            <input
+                                name="address"
+                                onChange={changeHandler}
+                                type="text"
+                                placeholder="address"
+                            />
+                            <input
+                                name="city"
+                                onChange={changeHandler}
+                                type="text"
+                                placeholder="city"
+                            />
                         </div>
                         <div className="additional-address-container">
-                            <select>
+                            <select
+                                onChange={(e) => setCountry(e.target.value)}
+                            >
                                 <option value="">Select Country</option>
                                 {countries.map((c) => (
                                     <option value={c?.name?.common}>
@@ -162,10 +209,17 @@ const Cart = () => {
                                 ))}
                             </select>
                             <input
+                                name="state"
+                                onChange={changeHandler}
                                 type="text"
                                 placeholder="state/province/region"
                             />
-                            <input type="text" placeholder="postal code" />
+                            <input
+                                name="postal_code"
+                                onChange={changeHandler}
+                                type="text"
+                                placeholder="postal code"
+                            />
                         </div>
                         <div className="terms-container">
                             <input
@@ -182,7 +236,12 @@ const Cart = () => {
                         {disabled ? (
                             <button className="btn-disabled">Next</button>
                         ) : (
-                            <button className="btn-secondary">Next</button>
+                            <button
+                                className="btn-secondary"
+                                onClick={submitHandler}
+                            >
+                                Next
+                            </button>
                         )}
                     </div>
                 </div>

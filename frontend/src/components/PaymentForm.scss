@@ -1,0 +1,10 @@
+.payment-container {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    width: 40%;
+    .btn-primary {
+        margin-top: 30px;
+    }
+}
